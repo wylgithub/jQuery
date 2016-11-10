@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jQuery拖拽滑动验证码插件 slideunlock.js </title>
+  <script type="text/javascript" src="js/Jquery/jquery-1.8.3.min.js" ></script>
+  <script type="text/javascript" src="js/Jquery/jquery.slideunlock.js" ></script>
+  <link rel="stylesheet" href="css/slide-unlock.css" />
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE-edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<style>
+    html, body, h1 {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        background-color: #393939;
+        color: #d5d4ff;
+        overflow: hidden
+    }
+    #demo {
+        width: 600px;
+        margin: 150px auto;
+        padding: 10px;
+        border: 1px dashed #d5d4ff;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        text-align: left;
+    }
+</style>
+</head>
+<body>
+<div id="demo">
+  <div id="slider">
+    <div id="slider_bg"></div>
+    <span id="label">>></span> <span id="labelTip">按住滑块，拖动到右边</span> </div>
+  <script>
+    $(function () {
+        var slider = new SliderUnlock("#slider",{
+				successLabelTip : "滑块验证成功!"	
+			},function(){
+				alert("验证成功,即将跳转至素材家园首页");
+            	window.location.href="http://127.0.0.1:8020/TestHquery/index.html"
+        	});
+        slider.init();
+    })
+</script> 
+</div>
+</body>
+</html>
